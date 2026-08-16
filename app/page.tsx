@@ -62,9 +62,9 @@ export default function HomePage() {
             className="rv mx-auto w-full max-w-[var(--maxw)] divide-y divide-white/10 px-7 py-3 sm:px-10 shadow-[0_34px_72px_-20px_rgba(5,26,33,.55)]"
             style={{
               background:
-                "radial-gradient(60% 90% at 100% 0%, rgba(20,166,196,.32), transparent 70%), " +
-                "radial-gradient(56% 90% at 0% 100%, rgba(34,197,94,.24), transparent 70%), " +
-                "linear-gradient(160deg,#073542 0%,#0A4353 55%,#051A21 100%)",
+                "radial-gradient(70% 100% at 100% 0%, rgba(99,218,222,.45), transparent 65%), " +
+                "radial-gradient(65% 100% at 0% 100%, rgba(36,188,110,.32), transparent 65%), " +
+                "linear-gradient(150deg,var(--navy-600) 0%,var(--teal-700) 55%,var(--navy-800) 100%)",
               borderRadius: 32,
             }}
           >
