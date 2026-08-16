@@ -1,3 +1,15 @@
+/* Tailwind utilities only — Preflight (Tailwind's element reset) is
+   deliberately omitted so it doesn't restyle the hand-tuned elements below.
+   Layer order below puts the legacy hand-written CSS *under* Tailwind's
+   utilities layer — unlayered CSS otherwise always beats layered CSS
+   (Tailwind utilities) regardless of specificity, which would make utility
+   classes like p-8/text-white silently no-op wherever a legacy rule (eg.
+   the *{margin:0;padding:0} reset, or h1,h2,h3{color:...}) also matches. */
+@layer legacy, theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer legacy {
 /* ==========================================================================
    AJ POWER SOLUTIONS — design tokens sampled pixel-by-pixel from the
    high-resolution logo file (public/images/logo for color.jpeg): navy hue
@@ -219,7 +231,7 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:var(
 
 .shead{max-width:620px;margin:0 auto 44px;text-align:center;color:#fff;
  background:linear-gradient(160deg,var(--navy-900),var(--navy-800));
- border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);
+ border:1px solid rgba(255,255,255,.1);border-radius:32px;
  padding:26px 34px 30px;box-shadow:0 26px 50px -22px rgba(0,0,0,.55)}
 .shead h2{margin-top:10px;font-size:clamp(1.7rem,3vw,2.3rem);color:#fff}
 .shead .kicker{color:var(--teal-300)}
@@ -247,26 +259,11 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:var(
 .card p{color:var(--body-text);font-size:.94rem;margin-top:9px;font-weight:500;line-height:1.65}
 @media(min-width:1101px){.svgrid{max-width:1080px}}
 
-/* ============ HOME — Why Us: one unified dark feature-strip (not 3 separate
-   cards). Services: interactive showcase — a list of collapsible rows next
-   to a single visual panel that crossfades to match whichever row is
-   active. Both are new class names, separate from .cards/.svgrid (still
-   used on /services and /about), so this only touches the home page. ============ */
-/* Color-coded cards — each takes one of the logo's three colours (navy,
-   teal, green) as its accent, instead of every card repeating the same
-   tone. Flat, restrained, no looping animation. */
-.whyshow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:var(--maxw);width:100%;margin:0 auto}
-.whycard{background:var(--surface);border-radius:var(--radius-lg);padding:30px 28px 28px;border-top:4px solid var(--teal-500);box-shadow:0 22px 44px -20px rgba(5,26,33,.42);transition:.25s}
-.whycard:hover{transform:translateY(-5px);box-shadow:0 30px 54px -18px rgba(5,26,33,.48)}
-.whycard:nth-child(2){border-top-color:var(--navy-700)}
-.whycard:nth-child(3){border-top-color:var(--emerald-500)}
-.whyno{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
-.whyic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;background:var(--teal-100);color:var(--teal-700)}
-.whycard:nth-child(2) .whyic{background:var(--surface-2);color:var(--navy-700)}
-.whycard:nth-child(3) .whyic{background:var(--emerald-100);color:var(--emerald-600)}
-.whycard h3{color:var(--ink);font-size:1.14rem}
-.whycard p{color:var(--body-text);font-size:.91rem;margin-top:9px;font-weight:500;line-height:1.7}
-
+/* ============ HOME — Why Us cards live in app/page.tsx as Tailwind
+   utility classes (frosted-glass floating cards) instead of here — see the
+   "why" section markup. Services: interactive showcase — a list of
+   collapsible rows next to a single visual panel that crossfades to match
+   whichever row is active. ============ */
 .svcshow{display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:var(--surface);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 34px 72px -20px rgba(5,26,33,.55);max-width:1360px;width:100%;margin:0 auto}
 .svcshow-visual{position:relative;min-height:420px;overflow:hidden;background:var(--navy-900)}
 .svcshow-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease,transform 6s ease}
@@ -292,8 +289,6 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:var(
 .svcshow-link{display:inline-block;color:var(--teal-600);font-weight:700;font-size:.87rem;padding:4px 36px 20px 72px}
 .svcshow-link:hover{color:var(--teal-700)}
 @media(max-width:1000px){.svcshow{grid-template-columns:1fr}.svcshow-visual{min-height:340px}}
-@media(max-width:1000px){.whyshow{grid-template-columns:1fr 1fr}}
-@media(max-width:720px){.whyshow{grid-template-columns:1fr}.whycard{min-height:300px}}
 
 /* ============ CTA BAND — vivid gradient-over-photo moment + FULL-WIDTH FOOTER ============
    The footer lives inside .ctaband (in page.tsx), so any bottom padding on
@@ -821,3 +816,4 @@ section .wrap,section .stack{width:100%}
   .adm-filters input[type=search]{min-width:100%}
   .adm-head h1{font-size:1.35rem}
 }
+} /* end @layer legacy */
