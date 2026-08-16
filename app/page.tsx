@@ -60,7 +60,13 @@ export default function HomePage() {
               how light or busy the crop behind them is. */}
           <div
             className="rv mx-auto w-full max-w-[var(--maxw)] divide-y divide-white/10 px-7 py-3 sm:px-10 shadow-[0_34px_72px_-20px_rgba(5,26,33,.55)]"
-            style={{ background: "linear-gradient(135deg,var(--navy-950) 0%,var(--navy-800) 45%,var(--teal-700) 100%)", borderRadius: 32 }}
+            style={{
+              background:
+                "radial-gradient(60% 90% at 100% 0%, rgba(20,166,196,.32), transparent 70%), " +
+                "radial-gradient(56% 90% at 0% 100%, rgba(34,197,94,.24), transparent 70%), " +
+                "linear-gradient(160deg,#073542 0%,#0A4353 55%,#051A21 100%)",
+              borderRadius: 32,
+            }}
           >
             <div className="group flex flex-col gap-5 py-9 transition-colors duration-300 hover:bg-white/[0.04] sm:flex-row sm:items-center sm:gap-11 sm:py-12">
               <span className="shrink-0 text-[2.8rem] font-black leading-none opacity-60 sm:text-[3.8rem]" style={{ fontFamily: "var(--font-display)", color: "var(--teal-500)" }}>01</span>
