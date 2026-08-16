@@ -55,49 +55,49 @@ export default function HomePage() {
             <div className="rule"></div>
           </div>
 
-          {/* One big opaque rounded panel (same idea as the Services showcase
-              panel below) so the rows stay legible over the photo no matter
-              how light or busy the crop behind them is. */}
-          <div
-            className="rv mx-auto w-full max-w-[var(--maxw)] divide-y divide-black/[0.07] px-7 py-3 sm:px-10 shadow-[0_34px_72px_-20px_rgba(5,26,33,.35)]"
-            style={{ background: "linear-gradient(135deg,var(--line) 0%,var(--line-strong) 100%)", borderRadius: 32 }}
-          >
-            <div className="group flex flex-col gap-5 py-9 transition-colors duration-300 hover:bg-black/[0.02] sm:flex-row sm:items-center sm:gap-11 sm:py-12">
-              <span className="shrink-0 text-[2.8rem] font-black leading-none opacity-70 sm:text-[3.8rem]" style={{ fontFamily: "var(--font-display)", color: "var(--teal-500)" }}>01</span>
-              <div className="flex flex-1 flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <div className="max-w-xl">
-                  <h3 className="text-[1.3rem] sm:text-[1.5rem]" style={{ color: "var(--ink)" }}>Quality Excellence</h3>
-                  <p className="mt-2 text-[.88rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>In-house design and engineering with value engineering from concept to CEIG approval, ensuring superior quality on every project.</p>
-                </div>
-                <div className="grid h-16 w-16 shrink-0 place-items-center ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110" style={{ background: "var(--teal-100)", color: "var(--teal-700)", borderRadius: 18 }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" /><path d="M9 12l2 2 4-4" /></svg>
-                </div>
+          {/* Alternating editorial blocks: each pillar is a full-width band with
+              a bold colour icon panel on one side and text on the other,
+              flipping sides row to row like a magazine feature spread. */}
+          <div className="rv mx-auto flex w-full max-w-[var(--maxw)] flex-col gap-5">
+            <div
+              className="flex flex-col overflow-hidden shadow-[0_34px_72px_-20px_rgba(5,26,33,.35)] sm:flex-row"
+              style={{ borderRadius: 27 }}
+            >
+              <div className="flex shrink-0 items-center justify-center p-[34px] sm:w-[220px]" style={{ background: "linear-gradient(135deg,var(--teal-500),var(--teal-700))" }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" /><path d="M9 12l2 2 4-4" /></svg>
+              </div>
+              <div className="flex flex-1 flex-col justify-center gap-1.5 p-[27px] sm:p-[34px]" style={{ background: "linear-gradient(135deg,var(--line) 0%,var(--line-strong) 100%)" }}>
+                <span className="text-[.68rem] font-bold tracking-[.2em] uppercase" style={{ color: "var(--teal-700)" }}>Reason 01</span>
+                <h3 className="text-[1.19rem] sm:text-[1.36rem]" style={{ color: "var(--ink)" }}>Quality Excellence</h3>
+                <p className="text-[.78rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>In-house design and engineering with value engineering from concept to CEIG approval, ensuring superior quality on every project.</p>
               </div>
             </div>
 
-            <div className="group flex flex-col gap-5 py-9 transition-colors duration-300 hover:bg-black/[0.02] sm:flex-row sm:items-center sm:gap-11 sm:py-12">
-              <span className="shrink-0 text-[2.8rem] font-black leading-none opacity-70 sm:text-[3.8rem]" style={{ fontFamily: "var(--font-display)", color: "var(--navy-700)" }}>02</span>
-              <div className="flex flex-1 flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <div className="max-w-xl">
-                  <h3 className="text-[1.3rem] sm:text-[1.5rem]" style={{ color: "var(--ink)" }}>Expert Leadership</h3>
-                  <p className="mt-2 text-[.88rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Directors with over two decades each in HT &amp; LT contracting, collaborating with JLL, CBRE, Savills, RSP and Semac.</p>
-                </div>
-                <div className="grid h-16 w-16 shrink-0 place-items-center ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110" style={{ background: "var(--surface-2)", color: "var(--navy-700)", borderRadius: 18 }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="7" r="4" /><path d="M1 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" /><path d="M17 3.5a4 4 0 0 1 0 7.5" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></svg>
-                </div>
+            <div
+              className="flex flex-col overflow-hidden shadow-[0_34px_72px_-20px_rgba(5,26,33,.35)] sm:flex-row-reverse"
+              style={{ borderRadius: 27 }}
+            >
+              <div className="flex shrink-0 items-center justify-center p-[34px] sm:w-[220px]" style={{ background: "linear-gradient(135deg,var(--navy-600),var(--navy-800))" }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="7" r="4" /><path d="M1 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" /><path d="M17 3.5a4 4 0 0 1 0 7.5" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></svg>
+              </div>
+              <div className="flex flex-1 flex-col justify-center gap-1.5 p-[27px] sm:p-[34px]" style={{ background: "linear-gradient(135deg,var(--line) 0%,var(--line-strong) 100%)" }}>
+                <span className="text-[.68rem] font-bold tracking-[.2em] uppercase" style={{ color: "var(--navy-700)" }}>Reason 02</span>
+                <h3 className="text-[1.19rem] sm:text-[1.36rem]" style={{ color: "var(--ink)" }}>Expert Leadership</h3>
+                <p className="text-[.78rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Directors with over two decades each in HT &amp; LT contracting, collaborating with JLL, CBRE, Savills, RSP and Semac.</p>
               </div>
             </div>
 
-            <div className="group flex flex-col gap-5 py-9 transition-colors duration-300 hover:bg-black/[0.02] sm:flex-row sm:items-center sm:gap-11 sm:py-12">
-              <span className="shrink-0 text-[2.8rem] font-black leading-none opacity-70 sm:text-[3.8rem]" style={{ fontFamily: "var(--font-display)", color: "var(--emerald-600)" }}>03</span>
-              <div className="flex flex-1 flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <div className="max-w-xl">
-                  <h3 className="text-[1.3rem] sm:text-[1.5rem]" style={{ color: "var(--ink)" }}>Comprehensive Service</h3>
-                  <p className="mt-2 text-[.88rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Round-the-clock service department, dedicated EHS and QC teams, testing, commissioning and preventive maintenance.</p>
-                </div>
-                <div className="grid h-16 w-16 shrink-0 place-items-center ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110" style={{ background: "var(--emerald-100)", color: "var(--emerald-600)", borderRadius: 18 }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
-                </div>
+            <div
+              className="flex flex-col overflow-hidden shadow-[0_34px_72px_-20px_rgba(5,26,33,.35)] sm:flex-row"
+              style={{ borderRadius: 27 }}
+            >
+              <div className="flex shrink-0 items-center justify-center p-[34px] sm:w-[220px]" style={{ background: "linear-gradient(135deg,var(--emerald-500),var(--emerald-600))" }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
+              </div>
+              <div className="flex flex-1 flex-col justify-center gap-1.5 p-[27px] sm:p-[34px]" style={{ background: "linear-gradient(135deg,var(--line) 0%,var(--line-strong) 100%)" }}>
+                <span className="text-[.68rem] font-bold tracking-[.2em] uppercase" style={{ color: "var(--emerald-600)" }}>Reason 03</span>
+                <h3 className="text-[1.19rem] sm:text-[1.36rem]" style={{ color: "var(--ink)" }}>Comprehensive Service</h3>
+                <p className="text-[.78rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Round-the-clock service department, dedicated EHS and QC teams, testing, commissioning and preventive maintenance.</p>
               </div>
             </div>
           </div>
