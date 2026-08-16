@@ -377,7 +377,14 @@ section .wrap,section .stack{width:100%}
   .fgrid > div:nth-child(1),.fgrid > div:nth-child(2),.fgrid > div:nth-child(3),.fgrid > div:nth-child(4){grid-column:auto;grid-row:auto}
   .fcopy{grid-column:1 / -1;text-align:center}
   .glass{padding:28px 22px}
-  section.hero.slideframe{min-height:80vh}
+  section.hero.slideframe{min-height:74vh}
+  /* The desktop hero overlay fades dark-left → transparent-right, tuned for
+     text sitting in the left half of a wide screen. On mobile the heading
+     spans nearly the full width, so that transparent right edge undercuts
+     contrast against the tail of every line — replace it with an even,
+     full-width wash plus a stronger bottom vignette behind the buttons. */
+  .hero::after{background:
+    linear-gradient(180deg,rgba(3,10,14,.74) 0%,rgba(3,10,14,.52) 40%,rgba(3,10,14,.6) 78%,rgba(3,10,14,.8) 100%)}
   .herocopy{padding:0 22px}
   .herocopy h1{font-size:clamp(1.9rem,7.5vw,2.35rem);max-width:20ch}
   .herocopy p{font-size:.95rem;margin-top:16px}
