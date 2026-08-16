@@ -224,6 +224,7 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:var(
 .shead h2{margin-top:10px;font-size:clamp(1.7rem,3vw,2.3rem);color:#fff}
 .shead .kicker{color:var(--teal-300)}
 .shead .rule{margin:18px auto 0;background:var(--teal-500);box-shadow:0 0 18px rgba(20,166,196,.55)}
+#why .shead h2{font-size:clamp(1.4rem,2.3vw,1.85rem)}
 
 /* ============ CARDS — Why Us + Services (unified light surface, floats over pinned photo) ============ */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:var(--maxw);width:100%;margin:0 auto}
@@ -251,45 +252,44 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:var(
    to a single visual panel that crossfades to match whichever row is
    active. Both are new class names, separate from .cards/.svgrid (still
    used on /services and /about), so this only touches the home page. ============ */
-/* No photography — a light card with an animated icon badge (a soft radar
-   pulse ring plus a gentle float) instead. */
-.whyshow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--maxw);width:100%;margin:0 auto}
-.whycard{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:40px 32px 34px;overflow:hidden;transition:.3s;box-shadow:0 26px 54px -20px rgba(5,26,33,.45)}
-.whycard:hover{transform:translateY(-6px);border-color:var(--line-strong);box-shadow:0 36px 66px -18px rgba(5,26,33,.5)}
-.whyno{position:absolute;top:22px;right:26px;font-family:var(--font-display),sans-serif;font-size:2.6rem;font-weight:800;color:var(--surface-2);line-height:1}
-.whyic{position:relative;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--teal-100),var(--surface-2));display:grid;place-items:center;margin-bottom:22px;color:var(--teal-600)}
-.whyic svg{position:relative;z-index:1;animation:whyBob 3.2s ease-in-out infinite}
-.whyic-ring{position:absolute;inset:0;border-radius:50%;border:2px solid var(--teal-300);opacity:.6;animation:whyPulse 2.8s ease-out infinite}
-.whycard:nth-child(2) .whyic-ring{animation-delay:.5s}
-.whycard:nth-child(3) .whyic-ring{animation-delay:1s}
-@keyframes whyPulse{0%{transform:scale(.85);opacity:.55}75%{transform:scale(1.35);opacity:0}100%{opacity:0}}
-@keyframes whyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.whycard h3{color:var(--ink);font-size:1.18rem;position:relative}
-.whycard p{color:var(--body-text);font-size:.92rem;margin-top:10px;font-weight:500;line-height:1.7;position:relative}
+/* Color-coded cards — each takes one of the logo's three colours (navy,
+   teal, green) as its accent, instead of every card repeating the same
+   tone. Flat, restrained, no looping animation. */
+.whyshow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:var(--maxw);width:100%;margin:0 auto}
+.whycard{background:var(--surface);border-radius:var(--radius-lg);padding:30px 28px 28px;border-top:4px solid var(--teal-500);box-shadow:0 22px 44px -20px rgba(5,26,33,.42);transition:.25s}
+.whycard:hover{transform:translateY(-5px);box-shadow:0 30px 54px -18px rgba(5,26,33,.48)}
+.whycard:nth-child(2){border-top-color:var(--navy-700)}
+.whycard:nth-child(3){border-top-color:var(--emerald-500)}
+.whyno{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+.whyic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;background:var(--teal-100);color:var(--teal-700)}
+.whycard:nth-child(2) .whyic{background:var(--surface-2);color:var(--navy-700)}
+.whycard:nth-child(3) .whyic{background:var(--emerald-100);color:var(--emerald-600)}
+.whycard h3{color:var(--ink);font-size:1.14rem}
+.whycard p{color:var(--body-text);font-size:.91rem;margin-top:9px;font-weight:500;line-height:1.7}
 
 .svcshow{display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:var(--surface);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 34px 72px -20px rgba(5,26,33,.55);max-width:1360px;width:100%;margin:0 auto}
-.svcshow-visual{position:relative;min-height:600px;overflow:hidden;background:var(--navy-900)}
+.svcshow-visual{position:relative;min-height:420px;overflow:hidden;background:var(--navy-900)}
 .svcshow-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease,transform 6s ease}
 .svcshow-img.active{opacity:1;transform:scale(1.04)}
 .svcshow-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,16,21,.78) 0%,transparent 45%);pointer-events:none}
-.svcshow-visual-cap{position:absolute;left:0;right:0;bottom:0;padding:38px 40px}
-.svcshow-visual-cap .no{font-weight:700;font-size:.8rem;letter-spacing:.1em;color:var(--teal-300);text-transform:uppercase}
-.svcshow-visual-cap h3{color:#fff;font-size:1.9rem;margin-top:8px}
-.svcshow-list{display:flex;flex-direction:column;padding:14px 0;justify-content:center}
+.svcshow-visual-cap{position:absolute;left:0;right:0;bottom:0;padding:30px 34px}
+.svcshow-visual-cap .no{font-weight:700;font-size:.76rem;letter-spacing:.1em;color:var(--teal-300);text-transform:uppercase}
+.svcshow-visual-cap h3{color:#fff;font-size:1.6rem;margin-top:6px}
+.svcshow-list{display:flex;flex-direction:column;padding:6px 0;justify-content:center}
 .svcshow-row{border-bottom:1px solid var(--line)}
 .svcshow-row:last-child{border-bottom:0}
-.svcshow-head{display:flex;align-items:center;gap:20px;width:100%;padding:28px 40px;background:none;border:0;cursor:pointer;text-align:left;font:inherit}
-.svcshow-no{font-family:var(--font-display),sans-serif;font-weight:700;font-size:1.05rem;color:var(--line-strong);transition:.25s;flex:none}
+.svcshow-head{display:flex;align-items:center;gap:18px;width:100%;padding:18px 36px;background:none;border:0;cursor:pointer;text-align:left;font:inherit}
+.svcshow-no{font-family:var(--font-display),sans-serif;font-weight:700;font-size:.98rem;color:var(--line-strong);transition:.25s;flex:none}
 .svcshow-row.active .svcshow-no{color:var(--teal-500)}
-.svcshow-ttl{flex:1;font-weight:700;font-size:1.22rem;color:var(--body-text);transition:.25s}
-.svcshow-row.active .svcshow-ttl{color:var(--ink);font-size:1.3rem}
-.svcshow-chev{color:var(--teal-500);font-weight:700;font-size:1.2rem;opacity:0;transform:translateX(-6px);transition:.25s;flex:none}
+.svcshow-ttl{flex:1;font-weight:700;font-size:1.1rem;color:var(--body-text);transition:.25s}
+.svcshow-row.active .svcshow-ttl{color:var(--ink);font-size:1.16rem}
+.svcshow-chev{color:var(--teal-500);font-weight:700;font-size:1.1rem;opacity:0;transform:translateX(-6px);transition:.25s;flex:none}
 .svcshow-row.active .svcshow-chev{opacity:1;transform:translateX(0)}
 .svcshow-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
 .svcshow-body-in{overflow:hidden}
 .svcshow-row.active .svcshow-body{grid-template-rows:1fr}
-.svcshow-body p{color:var(--body-text);font-size:1rem;font-weight:500;line-height:1.7;padding:0 40px 6px 80px}
-.svcshow-link{display:inline-block;color:var(--teal-600);font-weight:700;font-size:.95rem;padding:6px 40px 28px 80px}
+.svcshow-body p{color:var(--body-text);font-size:.92rem;font-weight:500;line-height:1.65;padding:0 36px 4px 72px}
+.svcshow-link{display:inline-block;color:var(--teal-600);font-weight:700;font-size:.87rem;padding:4px 36px 20px 72px}
 .svcshow-link:hover{color:var(--teal-700)}
 @media(max-width:1000px){.svcshow{grid-template-columns:1fr}.svcshow-visual{min-height:340px}}
 @media(max-width:1000px){.whyshow{grid-template-columns:1fr 1fr}}
@@ -391,7 +391,6 @@ section .wrap,section .stack{width:100%}
   .marq .track{animation:none}
   .rv{opacity:1;transform:none;transition:none}
   .herovideo{transition:none}
-  .whyic svg,.whyic-ring{animation:none}
 }
 
 /* ============ INNER PAGE HERO ============ */
