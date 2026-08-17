@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     id: "internal-electrification",
     no: "03",
     t: "Internal Electrification",
-    img: "https://images.unsplash.com/photo-1768321911048-46171ac7d425?auto=format&fit=crop&w=1600&q=85",
+    img: "https://images.unsplash.com/photo-1576446470246-499c738d1c8e?auto=format&fit=crop&w=1600&q=85",
     s: "Complete internal wiring executed cleanly to standard.",
     d: [
       "Complete internal wiring and electrification works executed cleanly to standard — for IT parks, data centres, industries, hospitals, and residential and commercial projects.",

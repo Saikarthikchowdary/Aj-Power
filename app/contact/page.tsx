@@ -29,11 +29,7 @@ export default function ContactPage() {
               {(Object.keys(CITIES) as CityKey[]).map((key) => {
                 const c = CITIES[key];
                 return (
-                  <div className="ctaddr" key={key}>
-                    <b>{c.name}</b>
-                    <span>{c.tag}</span>
-                    <p>{c.desc}</p>
-                  </div>
+                  <p className="ctaddr" key={key}><b>{c.name} — {c.tag}:</b> {c.desc}</p>
                 );
               })}
             </div>

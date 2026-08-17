@@ -633,12 +633,16 @@ section .wrap,section .stack{width:100%}
 .ctcard p{color:var(--body-text);font-weight:500;line-height:1.9}
 .ctcard a{color:var(--navy-700);font-weight:700}
 .ctcard a:hover{color:var(--teal-600)}
-.ctaddrs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 4px}
-.ctaddr{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-.ctaddr b{display:block;color:var(--ink);font-size:.92rem}
-.ctaddr span{display:block;font-size:.7rem;font-weight:700;color:var(--teal-700);text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
-.ctaddr p{margin-top:6px;font-size:.82rem;line-height:1.5;color:var(--body-text);font-weight:500}
-@media(max-width:640px){.ctaddrs{grid-template-columns:1fr}}
+.ctaddrs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:16px 0 4px}
+.ctaddr{padding:2px 18px}
+.ctaddr:first-child{padding-left:0}
+.ctaddr:last-child{padding-right:0}
+.ctaddr + .ctaddr{border-left:1px solid var(--line)}
+@media(max-width:640px){
+  .ctaddrs{grid-template-columns:1fr}
+  .ctaddr{padding:12px 0}
+  .ctaddr + .ctaddr{border-left:0;border-top:1px solid var(--line)}
+}
 
 /* global footer used on light pages */
 .sitefooter{background:var(--navy-950);color:#B9C8D6;padding:60px 0 26px}
@@ -713,9 +717,8 @@ section .wrap,section .stack{width:100%}
 :root[data-theme="dark"] .cl b{color:#E4EDF3}
 :root[data-theme="dark"] .statrow.home .st b i{color:var(--teal-300)}
 :root[data-theme="dark"] .btn-o{background:#101F33;border-color:var(--teal-300);color:var(--teal-300)}
-:root[data-theme="dark"] .ctaddr{background:#0D1D30;border-color:#1E3350}
 :root[data-theme="dark"] .ctaddr b{color:#E4EDF3}
-:root[data-theme="dark"] .ctaddr span{color:var(--teal-300)}
+:root[data-theme="dark"] .ctaddr + .ctaddr{border-color:#1E3350}
 :root[data-theme="dark"] .eform input,
 :root[data-theme="dark"] .eform select,
 :root[data-theme="dark"] .eform textarea{background:#0D1D30;border-color:#233952;color:#E4EDF3}

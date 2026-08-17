@@ -25,13 +25,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Non-sticky photo band (not .pinsec) — the sticky pinned-photo trick
-          needs enough content height to release cleanly before the next
-          section starts; a single content block alone isn't tall enough,
-          which was bleeding the photo through into the Why Us section
-          below. This plain band avoids that class of bug entirely. */}
-      <section className="band tint-light bandsec">
-        <div className="bg">
+      {/* Single pinned background spanning Clients + Why Us + Services —
+          the photo stays fixed (position:sticky) while all three content
+          blocks scroll over it, instead of each section carrying its own
+          separate copy of the image. */}
+      <section className="pinsec">
+        <div className="pinsec-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="https://images.unsplash.com/photo-1764641812239-cbc54c442e5e?auto=format&fit=crop&crop=top&w=2400&h=945&q=85" alt="" />
         </div>
@@ -52,18 +51,8 @@ export default function HomePage() {
             <ClientsMarquee />
           </div>
         </div>
-      </section>
 
-      {/* Why Choose Us — sits on the same pinned-style photo band as every
-          other section. Flat, evenly-sized cards in a plain row (no fan or
-          overlap): a quiet number, an accent-tinted icon chip, and a
-          colour-coded top edge that ties each card to its icon. */}
-      <section id="why" className="band tint-light bandsec">
-        <div className="bg">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1764641812239-cbc54c442e5e?auto=format&fit=crop&crop=top&w=2400&h=945&q=85" alt="" />
-        </div>
-        <div className="pinsec-content">
+        <div className="pinsec-content" id="why">
           <div className="shead rv">
             <div className="kicker">Why Choose Us</div>
             <h2>Engineering excellence, <span style={{ color: "var(--teal-300)" }}>trusted nationwide.</span></h2>
@@ -107,13 +96,6 @@ export default function HomePage() {
               <p className="mt-2 text-[.92rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Round-the-clock service department, dedicated EHS and QC teams, testing, commissioning and preventive maintenance.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="pinsec">
-        <div className="pinsec-bg">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1764641812239-cbc54c442e5e?auto=format&fit=crop&crop=top&w=2400&h=945&q=85" alt="" />
         </div>
 
         <div className="pinsec-content" id="services">
