@@ -55,9 +55,9 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us — sits on the same pinned-style photo band as every
-          other section (fully opaque cards read fine over any photo), with
-          a stacked, fanned hand of cards: each one offset and gently
-          rotated, hovering brings it to the front and settles it flat. */}
+          other section. Flat, evenly-sized cards in a plain row (no fan or
+          overlap): a quiet number, an accent-tinted icon chip, and a
+          colour-coded top edge that ties each card to its icon. */}
       <section id="why" className="band tint-light bandsec">
         <div className="bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,41 +70,41 @@ export default function HomePage() {
             <div className="rule"></div>
           </div>
 
-          <div className="rv isolate mx-auto flex w-full max-w-[var(--maxw)] flex-col items-center gap-6 py-4 sm:flex-row sm:items-start sm:justify-center sm:gap-0 sm:py-10">
+          <div className="rv mx-auto grid w-full max-w-[var(--maxw)] grid-cols-1 gap-6 sm:grid-cols-3">
             <div
-              className="group relative z-10 w-full shrink-0 rounded-[29px] p-[35px] shadow-[0_30px_62px_-20px_rgba(5,26,33,.43)] transition-all duration-300 ease-out sm:z-10 sm:w-[402px] sm:rotate-[-4deg] sm:translate-y-[14px] sm:hover:z-50 sm:hover:-translate-y-4 sm:hover:rotate-0 sm:hover:shadow-[0_34px_70px_-18px_rgba(5,26,33,.5)]"
-              style={{ background: "var(--surface)" }}
+              className="rounded-[24px] p-[35px] shadow-[0_24px_50px_-20px_rgba(5,26,33,.35)] transition-transform duration-300 hover:-translate-y-1.5"
+              style={{ background: "var(--surface)", borderTop: "4px solid var(--teal-500)" }}
             >
-              <div className="grid h-[72px] w-[72px] place-items-center rounded-2xl" style={{ background: "var(--teal-100)", color: "var(--teal-700)" }}>
-                <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" /><path d="M9 12l2 2 4-4" /></svg>
+              <span className="block text-[.82rem] font-bold" style={{ color: "var(--muted)" }}>01</span>
+              <div className="mt-4 grid h-14 w-14 place-items-center rounded-2xl" style={{ background: "var(--teal-100)", color: "var(--teal-700)" }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" /><path d="M9 12l2 2 4-4" /></svg>
               </div>
-              <span className="mt-4 block text-[.85rem] font-bold tracking-[.18em] uppercase" style={{ color: "var(--teal-700)" }}>Reason 01</span>
-              <h3 className="mt-1 text-[1.51rem]" style={{ color: "var(--ink)" }}>Quality Excellence</h3>
-              <p className="mt-2 text-[1.02rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>In-house design and engineering with value engineering from concept to CEIG approval, ensuring superior quality on every project.</p>
+              <h3 className="mt-5 text-[1.25rem]" style={{ color: "var(--ink)" }}>Quality Excellence</h3>
+              <p className="mt-2 text-[.92rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>In-house design and engineering with value engineering from concept to CEIG approval, ensuring superior quality on every project.</p>
             </div>
 
             <div
-              className="group relative z-20 w-full shrink-0 rounded-[29px] p-[35px] shadow-[0_30px_62px_-20px_rgba(5,26,33,.43)] transition-all duration-300 ease-out sm:z-20 sm:w-[402px] sm:-ml-[72px] sm:rotate-[2deg] sm:-translate-y-[10px] sm:hover:z-50 sm:hover:-translate-y-8 sm:hover:rotate-0 sm:hover:shadow-[0_34px_70px_-18px_rgba(5,26,33,.5)]"
-              style={{ background: "var(--surface)" }}
+              className="rounded-[24px] p-[35px] shadow-[0_24px_50px_-20px_rgba(5,26,33,.35)] transition-transform duration-300 hover:-translate-y-1.5"
+              style={{ background: "var(--surface)", borderTop: "4px solid var(--navy-700)" }}
             >
-              <div className="grid h-[72px] w-[72px] place-items-center rounded-2xl" style={{ background: "var(--surface-2)", color: "var(--navy-700)" }}>
-                <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="7" r="4" /><path d="M1 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" /><path d="M17 3.5a4 4 0 0 1 0 7.5" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></svg>
+              <span className="block text-[.82rem] font-bold" style={{ color: "var(--muted)" }}>02</span>
+              <div className="mt-4 grid h-14 w-14 place-items-center rounded-2xl" style={{ background: "var(--surface-2)", color: "var(--navy-700)" }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="7" r="4" /><path d="M1 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" /><path d="M17 3.5a4 4 0 0 1 0 7.5" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></svg>
               </div>
-              <span className="mt-4 block text-[.85rem] font-bold tracking-[.18em] uppercase" style={{ color: "var(--navy-700)" }}>Reason 02</span>
-              <h3 className="mt-1 text-[1.51rem]" style={{ color: "var(--ink)" }}>Expert Leadership</h3>
-              <p className="mt-2 text-[1.02rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Directors with over two decades each in HT &amp; LT contracting, collaborating with JLL, CBRE, Savills, RSP and Semac.</p>
+              <h3 className="mt-5 text-[1.25rem]" style={{ color: "var(--ink)" }}>Expert Leadership</h3>
+              <p className="mt-2 text-[.92rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Directors with over two decades each in HT &amp; LT contracting, collaborating with JLL, CBRE, Savills, RSP and Semac.</p>
             </div>
 
             <div
-              className="group relative z-30 w-full shrink-0 rounded-[29px] p-[35px] shadow-[0_30px_62px_-20px_rgba(5,26,33,.43)] transition-all duration-300 ease-out sm:z-30 sm:w-[402px] sm:-ml-[72px] sm:rotate-[-3deg] sm:translate-y-[18px] sm:hover:z-50 sm:hover:-translate-y-4 sm:hover:rotate-0 sm:hover:shadow-[0_34px_70px_-18px_rgba(5,26,33,.5)]"
-              style={{ background: "var(--surface)" }}
+              className="rounded-[24px] p-[35px] shadow-[0_24px_50px_-20px_rgba(5,26,33,.35)] transition-transform duration-300 hover:-translate-y-1.5"
+              style={{ background: "var(--surface)", borderTop: "4px solid var(--emerald-500)" }}
             >
-              <div className="grid h-[72px] w-[72px] place-items-center rounded-2xl" style={{ background: "var(--emerald-100)", color: "var(--emerald-600)" }}>
-                <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
+              <span className="block text-[.82rem] font-bold" style={{ color: "var(--muted)" }}>03</span>
+              <div className="mt-4 grid h-14 w-14 place-items-center rounded-2xl" style={{ background: "var(--emerald-100)", color: "var(--emerald-600)" }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
               </div>
-              <span className="mt-4 block text-[.85rem] font-bold tracking-[.18em] uppercase" style={{ color: "var(--emerald-600)" }}>Reason 03</span>
-              <h3 className="mt-1 text-[1.51rem]" style={{ color: "var(--ink)" }}>Comprehensive Service</h3>
-              <p className="mt-2 text-[1.02rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Round-the-clock service department, dedicated EHS and QC teams, testing, commissioning and preventive maintenance.</p>
+              <h3 className="mt-5 text-[1.25rem]" style={{ color: "var(--ink)" }}>Comprehensive Service</h3>
+              <p className="mt-2 text-[.92rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Round-the-clock service department, dedicated EHS and QC teams, testing, commissioning and preventive maintenance.</p>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
       <section className="ctaband" id="cta">
         <div className="ctaband-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1756913454165-246d96a20b67?auto=format&fit=crop&w=2400&q=85" alt="" />
+          <img src="https://images.unsplash.com/photo-1663160055679-7b7fecb4468f?auto=format&fit=crop&w=2400&q=85" alt="" />
         </div>
         <span className="glow1"></span><span className="glow2"></span>
         <div className="glass rv">

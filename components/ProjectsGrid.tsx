@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { type Project, slugify } from "@/lib/data";
 
-const STEP = 9;
+const STEP = 6;
 
 export default function ProjectsGrid({ projects }: { projects: Project[] }) {
   const [count, setCount] = useState(Math.min(STEP, projects.length));
