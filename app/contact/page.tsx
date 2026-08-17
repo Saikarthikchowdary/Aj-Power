@@ -32,9 +32,9 @@ export default function ContactPage() {
                   <p className="ctaddr" key={key}><b>{c.name} — {c.tag}:</b> {c.desc}</p>
                 );
               })}
-            </div>
-            <div style={{ marginTop: 20 }}>
-              <FooterMap light label="View more details →" />
+              <div className="ctaddr-map">
+                <FooterMap light label="View more details →" />
+              </div>
             </div>
           </div>
           <div className="ctcard">
