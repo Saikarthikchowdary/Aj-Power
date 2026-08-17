@@ -563,7 +563,7 @@ section .wrap,section .stack{width:100%}
 @media(max-width:720px){.eform .row2{grid-template-columns:1fr}}
 
 /* ============ FAQ ============ */
-.faq{display:grid;gap:14px;max-width:900px}
+.faq{display:grid;gap:14px;max-width:945px;margin:0 auto}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
 .faq summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq summary::-webkit-details-marker{display:none}
