@@ -132,6 +132,10 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:var(
 .band > .bg{position:absolute;inset:0;z-index:0}
 .band > .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
 .band.tint::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(4,13,26,.82),rgba(7,20,38,.72) 55%,rgba(4,13,26,.86));z-index:1}
+/* Lighter variant matching the original .pinsec-bg overlay — used where the
+   photo itself should stay clearly visible (its content floats above in
+   fully opaque cards, so it doesn't need a heavy dark wash for contrast). */
+.band.tint-light::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,26,33,.46) 0%,rgba(5,26,33,.24) 16%,rgba(5,26,33,.22) 84%,rgba(5,26,33,.46) 100%);z-index:1}
 
 .megaband{position:relative;overflow:hidden}
 .megaband > .bg{position:absolute;inset:0;z-index:0}
@@ -386,9 +390,10 @@ section .wrap,section .stack{width:100%}
   .hero::after{background:
     linear-gradient(180deg,rgba(3,10,14,.74) 0%,rgba(3,10,14,.52) 40%,rgba(3,10,14,.6) 78%,rgba(3,10,14,.8) 100%)}
   .herocopy{padding:0 22px}
-  .herocopy h1{font-size:clamp(1.9rem,7.5vw,2.35rem);max-width:20ch}
-  .herocopy p{font-size:.95rem;margin-top:16px}
-  .herocopy .acts{gap:16px;margin-top:24px}
+  .herocopy h1{font-size:clamp(1.85rem,7vw,2.35rem);line-height:1.22;max-width:21ch}
+  .herocopy p{font-size:.92rem;line-height:1.6;margin-top:18px;max-width:36ch}
+  .herocopy .acts{gap:14px;margin-top:30px}
+  .btn-pill{padding:14px 28px;font-size:.76rem}
   .brand .mk{width:44px;height:44px}
   .brand .txt b{font-size:1rem}.brand .txt small{font-size:.56rem;letter-spacing:.16em}
 }
@@ -396,6 +401,7 @@ section .wrap,section .stack{width:100%}
   .marq .track{animation:none}
   .rv{opacity:1;transform:none;transition:none}
   .herovideo{transition:none}
+  .pj{animation:none}
 }
 
 /* ============ INNER PAGE HERO ============ */
@@ -432,13 +438,29 @@ section .wrap,section .stack{width:100%}
 .statrow.home .st b{background:linear-gradient(120deg,var(--navy-600),var(--teal-500));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:2.3rem}
 .statrow.home .st b i{background:none;-webkit-text-fill-color:initial;color:var(--teal-600)}
 .pjgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.pj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;transition:.22s;box-shadow:var(--shadow-sm)}
+.pj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;transition:transform .22s,border-color .22s,box-shadow .22s;box-shadow:var(--shadow-sm);
+ animation:pjIn .5s cubic-bezier(.2,.7,.3,1) both}
 .pj:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow-md)}
+@keyframes pjIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .pj .sect{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--navy-600);background:var(--surface-2);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
 .pj h3{color:var(--ink);font-size:1.22rem;margin-top:12px}
 .pj p{color:var(--body-text);font-weight:500;font-size:.91rem;margin-top:8px;line-height:1.6}
 .pj .cnt2{position:absolute;top:18px;right:18px;background:var(--navy-800);color:var(--teal-300);font-size:.7rem;font-weight:700;padding:5px 11px;border-radius:999px}
 .secthead{margin:44px 0 20px;font-size:1.5rem;color:var(--ink);letter-spacing:-.02em}
+
+/* ============ LOAD MORE (clients grid) — a progress-bar + button instead
+   of numbered pages: shows how much of the list is visible and reveals
+   the rest in steps, collapsing back down once everything is shown. ============ */
+.loadmore{max-width:400px;margin:44px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.loadmore-track{width:100%;height:6px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.loadmore-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal-500),var(--emerald-500));transition:width .5s cubic-bezier(.2,.7,.3,1)}
+.loadmore-count{font-size:.86rem;font-weight:600;color:var(--muted)}
+.loadmore-count b{color:var(--navy-800);font-weight:700}
+.loadmore-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:999px;border:1.5px solid var(--line-strong);
+ background:var(--surface);color:var(--navy-800);font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;transition:.2s}
+.loadmore-btn:hover{border-color:var(--teal-500);color:var(--teal-700);transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(20,166,196,.5)}
+:root[data-theme="dark"] .loadmore-btn{background:#101F33;border-color:#1E3350;color:#DCE7F0}
+:root[data-theme="dark"] .loadmore-count b{color:#DCE7F0}
 
 .pjfeat{background:linear-gradient(120deg,var(--navy-900),var(--navy-700));border-radius:var(--radius-lg);color:#fff;padding:40px 44px;display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:center;margin-bottom:26px;position:relative;overflow:hidden}
 .pjfeat::before{content:"";position:absolute;inset:0;opacity:.1;background-image:linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);background-size:44px 44px}

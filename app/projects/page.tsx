@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import PageCta from "@/components/PageCta";
-import { PROJECTS, slugify } from "@/lib/data";
+import ProjectsGrid from "@/components/ProjectsGrid";
+import { PROJECTS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -33,25 +33,7 @@ export default function ProjectsPage() {
           <div className="big">25+<small>REPEAT-ORDER CLIENTS</small></div>
         </div>
         <h2 className="secthead">Clients &amp; engagements</h2>
-        <div className="pjgrid">
-          {PROJECTS.map((p) => {
-            const initials = p.name.split(/\s|\(/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
-            return (
-              <Link className="pj" href={`/projects/${slugify(p.name)}`} key={p.name}>
-                <span className="cnt2">{p.count} {p.count > 1 ? "projects" : "project"}</span>
-                {p.logo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img className="logoimg" src={p.logo} alt={`${p.name} logo`} loading="lazy" />
-                ) : (
-                  <div className="avv">{initials}</div>
-                )}
-                <span className="sect">{p.sector}</span>
-                <h3>{p.name}</h3>
-                <p>{p.desc}</p>
-              </Link>
-            );
-          })}
-        </div>
+        <ProjectsGrid projects={PROJECTS} />
         <PageCta
           title="Your project could be next."
           text="From single facilities to multi-phase campuses — we deliver HT & LT electrification end to end."
