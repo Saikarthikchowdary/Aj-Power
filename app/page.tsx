@@ -107,21 +107,6 @@ export default function HomePage() {
               <p className="mt-2 text-[1.02rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>Round-the-clock service department, dedicated EHS and QC teams, testing, commissioning and preventive maintenance.</p>
             </div>
           </div>
-
-          <div className="rv mx-auto mt-14 grid w-full max-w-[var(--maxw)] grid-cols-3 overflow-hidden rounded-[28px]" style={{ background: "linear-gradient(120deg,var(--navy-900),var(--navy-700))" }}>
-            <div className="border-r p-6 text-center sm:p-8" style={{ borderColor: "rgba(255,255,255,.14)" }}>
-              <b className="block text-[1.7rem] font-extrabold sm:text-[2.1rem]" style={{ color: "#fff", fontFamily: "var(--font-display),sans-serif" }}>250+</b>
-              <span className="mt-1 block text-[.72rem] font-semibold sm:text-[.82rem]" style={{ color: "rgba(255,255,255,.75)" }}>Projects Delivered</span>
-            </div>
-            <div className="border-r p-6 text-center sm:p-8" style={{ borderColor: "rgba(255,255,255,.14)" }}>
-              <b className="block text-[1.7rem] font-extrabold sm:text-[2.1rem]" style={{ color: "#fff", fontFamily: "var(--font-display),sans-serif" }}>13M+</b>
-              <span className="mt-1 block text-[.72rem] font-semibold sm:text-[.82rem]" style={{ color: "rgba(255,255,255,.75)" }}>Sq Ft Executed</span>
-            </div>
-            <div className="p-6 text-center sm:p-8">
-              <b className="block text-[1.7rem] font-extrabold sm:text-[2.1rem]" style={{ color: "var(--teal-300)", fontFamily: "var(--font-display),sans-serif" }}>24/7</b>
-              <span className="mt-1 block text-[.72rem] font-semibold sm:text-[.82rem]" style={{ color: "rgba(255,255,255,.75)" }}>Service Department</span>
-            </div>
-          </div>
         </div>
       </section>
 
