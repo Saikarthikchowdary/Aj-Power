@@ -13,11 +13,11 @@ export const SERVICES: Service[] = [
     id: "design-engineering",
     no: "01",
     t: "Design & Engineering",
-    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85",
+    img: "https://images.unsplash.com/photo-1713557112617-e12d67bddc3a?auto=format&fit=crop&w=1600&q=85",
     s: "Site-specific design, load planning and compliance documentation.",
     d: [
       "Our in-house Design, Engineering, Estimation, Documentation and Procurement teams work in tandem from the core of the project to produce detailed pre-construction, Good-for-Construction and coordination drawings.",
-      "AJ Power Solutions is a pioneer in reviewing the complete electrical design in coordination with Architects and Consultants as per client requirements, in a cost-effective manner — from concept through CEIG approval.",
+      "AJ Power Solutions is a pioneer in reviewing the complete electrical design in coordination with Architects and Consultants as per client requirements, in a cost-effective manner — from concept through statutory approvals.",
     ],
     k: [
       "Detailed designing & estimation",
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     id: "internal-electrification",
     no: "03",
     t: "Internal Electrification",
-    img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=85",
+    img: "https://images.unsplash.com/photo-1768321911048-46171ac7d425?auto=format&fit=crop&w=1600&q=85",
     s: "Complete internal wiring executed cleanly to standard.",
     d: [
       "Complete internal wiring and electrification works executed cleanly to standard — for IT parks, data centres, industries, hospitals, and residential and commercial projects.",
@@ -67,7 +67,7 @@ export const SERVICES: Service[] = [
     id: "lighting-management",
     no: "04",
     t: "Lighting Management",
-    img: "https://images.unsplash.com/photo-1771599141394-bc646d21cd61?auto=format&fit=crop&w=1600&q=85",
+    img: "https://images.unsplash.com/photo-1652540166492-4b700df31f56?auto=format&fit=crop&w=1600&q=85",
     s: "Lighting systems designed for efficiency and control.",
     d: [
       "AJ Power Solutions has a dedicated design team providing the latest light-fixture details according to project requirements, along with complete lighting design calculations.",
@@ -103,7 +103,7 @@ export const SERVICES: Service[] = [
     id: "maintenance-service",
     no: "06",
     t: "Maintenance & Service",
-    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1600&q=85",
+    img: "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=1600&q=85",
     s: "Preventive maintenance backed by a 24-hour service department.",
     d: [
       "Electrical maintenance is an important part of the electrical system that keeps industries and facilities running effectively. Our twenty-four-hour service department keeps us connected to our customers whenever we are needed.",
@@ -170,8 +170,8 @@ export const CITIES: Record<CityKey, { tag: string; name: string; desc: string; 
     embed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.6554956365817!2d78.32354577522358!3d17.47619548342618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9344c4cc45c5%3A0x77f69745a0b19f8!2sAj%20Power%20Solutions!5e0!3m2!1sen!2sin!4v1784475561486!5m2!1sen!2sin",
     gmaps: "https://www.google.com/maps?cid=540266428755548664",
-    left: "45.0%",
-    top: "65.0%",
+    left: "46.0%",
+    top: "65.75%",
   },
   bengaluru: {
     tag: "Branch · Since 2021",
@@ -179,8 +179,8 @@ export const CITIES: Record<CityKey, { tag: string; name: string; desc: string; 
     desc: "Serving projects across Karnataka since 2021.",
     embed: "https://maps.google.com/maps?q=12.996954887320769,77.65473557507691(AJ+Power+Solutions)&z=16&output=embed",
     gmaps: "https://www.google.com/maps?q=12.996954887320769,77.65473557507691",
-    left: "31.6%",
-    top: "77.8%",
+    left: "36.0%",
+    top: "76.0%",
   },
   pune: {
     tag: "Branch · Since 2020",

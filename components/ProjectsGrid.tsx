@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { type Project, slugify } from "@/lib/data";
+import { type Project } from "@/lib/data";
 
 const STEP = 6;
 
@@ -28,7 +27,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
         {shown.map((p) => {
           const initials = p.name.split(/\s|\(/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
           return (
-            <Link className="pj" href={`/projects/${slugify(p.name)}`} key={p.name}>
+            <div className="pj" key={p.name}>
               <span className="cnt2">{p.count} {p.count > 1 ? "projects" : "project"}</span>
               {p.logo ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -39,7 +38,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
               <span className="sect">{p.sector}</span>
               <h3>{p.name}</h3>
               <p>{p.desc}</p>
-            </Link>
+            </div>
           );
         })}
       </div>

@@ -21,7 +21,6 @@ export default function AboutPage() {
             <p><b>AJ POWER SOLUTIONS</b> is a leader in every aspect of electrical construction, maintenance and service — one of the reputed specialized HT &amp; LT electrical contractors in South India for commercial, industrial, residential and IT sectors, equipped to handle the challenges and complexities of any job.</p>
             <p>We bring a dedication to safety, integrity and dependability to every job. Integrity, honesty, perseverance, respect and service — these are the true values embraced by each and every AJ Power Solutions employee. Our projects can be complex, but our ethics are not.</p>
             <p>Founded with the philosophy of <b>&quot;PEOPLE ARE OUR STRENGTH&quot;</b>, we are a growing, innovative company committed to quality service — building relationships that provide complete satisfaction and lead to lifetime partnerships.</p>
-            <div className="collab"><span>JLL</span><span>CBRE</span><span>Savills</span><span>RSP</span><span>Semac</span></div>
           </div>
         </div>
 

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CITIES, CityKey } from "@/lib/data";
 
-export default function FooterMap() {
+export default function FooterMap({ label = "Our Presence →", light = false }: { label?: string; light?: boolean }) {
   return (
-    <Link className="fmap" href="/presence" aria-label="View all AJ Power Solutions locations">
+    <Link className={"fmap" + (light ? " fmap-light" : "")} href="/presence" aria-label="View all AJ Power Solutions locations">
       <div className="fmap-in">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/india.svg" alt="AJ Power Solutions locations across India" />
@@ -17,7 +17,7 @@ export default function FooterMap() {
           );
         })}
       </div>
-      <span className="fmap-cta">Our Presence →</span>
+      <span className="fmap-cta">{label}</span>
     </Link>
   );
 }

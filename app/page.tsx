@@ -80,7 +80,7 @@ export default function HomePage() {
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" /><path d="M9 12l2 2 4-4" /></svg>
               </div>
               <h3 className="mt-5 text-[1.25rem]" style={{ color: "var(--ink)" }}>Quality Excellence</h3>
-              <p className="mt-2 text-[.92rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>In-house design and engineering with value engineering from concept to CEIG approval, ensuring superior quality on every project.</p>
+              <p className="mt-2 text-[.92rem] font-medium leading-relaxed" style={{ color: "var(--body-text)" }}>In-house design and engineering with value engineering from concept to statutory approvals, ensuring superior quality on every project.</p>
             </div>
 
             <div
